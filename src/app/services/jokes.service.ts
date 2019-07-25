@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class JokesService {
 
   url = '/assets/trocadilhos.json';
+  joke: any;
 
   constructor(private http: HttpClient) { }
 

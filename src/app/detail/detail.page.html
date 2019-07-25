@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalhe da piada</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img src="../../assets/laugh.jpg" />
+    <ion-card-header>
+      <ion-card-subtitle>Pergunta</ion-card-subtitle>
+      <ion-card-title>{{ piada?.pergunta }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>{{ piada?.resposta }}</ion-card-content>
+  </ion-card>
+  <div class="ion-padding">
+    <ion-button expand="block" fill="outline" (click)="back()">Voltar</ion-button>
+  </div>
+</ion-content>

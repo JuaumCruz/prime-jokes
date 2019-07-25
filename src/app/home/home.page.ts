@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { JokesService } from '../services/jokes.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ export class HomePage {
   jokes: any[];
   searchedJokes: any[];
 
-  constructor(private jokesService: JokesService) {}
+  constructor(private jokesService: JokesService, private router: Router) {}
 
   ngOnInit() {
     this.jokesService.getAll().subscribe(p => {
@@ -30,5 +31,10 @@ export class HomePage {
 
   clearJoke() {
     this.searchedJokes = [];
+  }
+
+  viewJoke(joke: any) {
+    this.jokesService.joke = joke;
+    this.router.navigateByUrl('/detail');
   }
 }

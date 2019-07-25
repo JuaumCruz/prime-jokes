@@ -12,16 +12,11 @@
     <ion-button expand="block" fill="outline" (click)="searchJoke(search)">Faça-me rir!</ion-button>
     <ion-button expand="block" fill="outline" color="danger" (click)="clearJoke()">Limpar</ion-button>
 
-    <div *ngFor="let piada of searchedJokes">
-      <ion-card>
-        <ion-card-header>
-          <ion-card-subtitle>Pergunta</ion-card-subtitle>
-          <ion-card-title>{{ piada.pergunta }}</ion-card-title>
-        </ion-card-header>
-      
-        <ion-card-content>{{ piada.resposta }}</ion-card-content>
-      </ion-card>
-    </div>
+    <ion-grid *ngFor="let piada of searchedJokes">
+        <ion-row>
+            <ion-col><a (click)="viewJoke(piada)" >{{ piada.pergunta }}</a></ion-col>
+        </ion-row>
+    </ion-grid>
   
   </div>
 </ion-content>
