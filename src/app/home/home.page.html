@@ -1,14 +1,27 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Prime Jokes
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    <ion-input placeholder="Procure por sua piada" [(ngModel)]="search" clearInput></ion-input>
+    <ion-button expand="block" fill="outline" (click)="searchJoke(search)">Faça-me rir!</ion-button>
+    <ion-button expand="block" fill="outline" color="danger" (click)="clearJoke()">Limpar</ion-button>
+
+    <div *ngFor="let piada of searchedJokes">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Pergunta</ion-card-subtitle>
+          <ion-card-title>{{ piada.pergunta }}</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>{{ piada.resposta }}</ion-card-content>
+      </ion-card>
+    </div>
+  
   </div>
 </ion-content>
